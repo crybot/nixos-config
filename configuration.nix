@@ -167,9 +167,6 @@ in
   hardware.graphics = {
     enable = true;
   };
-  hardware.graphics.extraPackages = with pkgs; [
-    intel-compute-runtime
-  ];
 
   programs.fish = {
     enable = true;
