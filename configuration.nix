@@ -31,8 +31,8 @@ in
       size = 16 * 1024; # 16GB
     }];
 
-  # catppuccin.flavor = "mocha";
-  # catppuccin.enable = true;
+  catppuccin.flavor = "mocha";
+  catppuccin.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -78,8 +78,11 @@ in
     packages = with pkgs; [];
   };
 
-  # Import home-manager configurations
-  # home-manager.users.crybot = import ./home/default.nix;
+  systemd.packages = with pkgs; [
+    gdm
+    gnome-session
+    gnome-shell
+  ];
 
   # List packages installed in system profile. To search, run: nix search <package>
   environment.systemPackages = with pkgs; [
@@ -112,6 +115,7 @@ in
     image-roll
     mpv
     waypaper
+    adwaita-icon-theme
   ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -160,8 +164,8 @@ in
 
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
   };
+
   services.libinput.enable = true;
 
   hardware.graphics = {
@@ -170,9 +174,6 @@ in
 
   programs.fish = {
     enable = true;
-    # shellAliases = {
-    #   vim = "nvim";
-    # };
   };
 
   programs.neovim = {
@@ -191,6 +192,7 @@ in
     '';
   };
   fonts.packages = with pkgs; [
+    noto-fonts
     nerdfonts
     font-awesome
     powerline-fonts
@@ -212,8 +214,7 @@ in
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true;
   };
 
   services.power-profiles-daemon.enable = true;

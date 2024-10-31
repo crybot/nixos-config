@@ -7,4 +7,9 @@
   hardware.graphics.extraPackages = with pkgs; [
     intel-compute-runtime
   ];
+
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+  };
 }
