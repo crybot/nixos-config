@@ -7,7 +7,7 @@
   programs.alacritty = {
     settings =  {
       font = {
-        size = lib.mkForce 11.6;
+        size = lib.mkForce 13.0;
       };
     };
   };
