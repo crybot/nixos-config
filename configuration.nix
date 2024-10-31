@@ -3,6 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 #TODO: blueman, redshift
+#TODO: firefox with extensions (ublock, lastpass)
 
 #TODO: move common stuff for all hosts here, including home-manager configs
 
@@ -91,7 +92,6 @@ in
     vim 
     wl-clipboard
     kitty 
-    # alacritty 
     fish 
     rofi-wayland
     waybar
