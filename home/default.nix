@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
@@ -12,8 +12,6 @@
 
   # Packages that should be installed to the user profile.
   home.packages = [
-    pkgs.htop
-    pkgs.fortune
   ];
 
   # This value determines the Home Manager release that your
@@ -45,4 +43,33 @@
       userEmail = "crybot@hotmail.it";
     };
   };
+
+  programs.alacritty = {
+    enable = true;
+    catppuccin.enable = true;
+    catppuccin.flavor = "mocha"; #TODO: also test "macchiato"
+
+    settings = {
+      font = {
+        normal = {
+          family = "FiraCode Nerd Font";
+          style = "Regular";
+        };
+        size = 13.0;
+      };
+
+      colors = {
+        draw_bold_text_with_bright_colors = true;
+      };
+
+      terminal = {
+        shell = "fish";
+      };
+
+      window = {
+        dynamic_padding = true;
+      };
+    };
+  };
+
 }

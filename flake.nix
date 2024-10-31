@@ -36,6 +36,7 @@
             home-manager.users.crybot = {
               imports = [
                 ./home/default.nix 
+                ./hosts/desktop/home.nix
                 catppuccin.homeManagerModules.catppuccin
               ];
             };

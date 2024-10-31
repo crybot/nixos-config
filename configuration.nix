@@ -4,6 +4,8 @@
 
 #TODO: blueman, redshift
 
+#TODO: move common stuff for all hosts here, including home-manager configs
+
 { config, pkgs, lib, ... }:
 let
   # Override obsidian with a wrapped version that fixes fractional scaling in wayland
@@ -88,7 +90,9 @@ in
     wget git
     vim 
     wl-clipboard
-    kitty alacritty fish 
+    kitty 
+    # alacritty 
+    fish 
     rofi-wayland
     waybar
     gcc clang
@@ -116,6 +120,8 @@ in
     waypaper
     adwaita-icon-theme
   ];
+
+  # Hint Electron apps to use Wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   xdg.portal = {
