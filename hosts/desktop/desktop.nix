@@ -25,7 +25,7 @@
     sddm.package = pkgs.kdePackages.sddm;
     sddm.catppuccin.enable = true;
     sddm.catppuccin.flavor = "mocha";
-    sddm.catppuccin.fontSize = "32";
+    sddm.catppuccin.fontSize = "14";
     sddm.catppuccin.font = "Noto Sans";
   };
 
